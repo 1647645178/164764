@@ -1,3 +1,6 @@
+CookBook
+
+--------第一章--------
 Python 3.7.4 (default, Aug  9 2019, 18:34:13) [MSC v.1915 64 bit (AMD64)]
 Type "copyright", "credits" or "license" for more information.
 
@@ -311,3 +314,224 @@ for date,items in groupby(rows,key=itemgetter('date')):
    {'address': '1412 CLARK', 'date': '07/01/2016'}
 07/01/2019
    {'address': '2412 CLARK', 'date': '07/01/2019'}
+ from collections import namedtuple
+
+s=namedtuple('S',['A''B'])
+
+s=namedtuple('Sb',['A''B'])
+
+s
+Out[49]: __main__.Sb
+
+sb
+Traceback (most recent call last):
+
+  File "<ipython-input-50-2e29fd6b6233>", line 1, in <module>
+    sb
+
+NameError: name 'sb' is not defined
+
+
+
+
+Sb
+Traceback (most recent call last):
+
+  File "<ipython-input-51-09d66f3f1d43>", line 1, in <module>
+    Sb
+
+NameError: name 'Sb' is not defined
+
+
+
+
+sub=s('c','d')
+Traceback (most recent call last):
+
+  File "<ipython-input-52-b9ab37554950>", line 1, in <module>
+    sub=s('c','d')
+
+TypeError: __new__() takes 2 positional arguments but 3 were given
+
+
+
+
+s=namedtuple('s',['A''B'])
+
+sc=s('c','d')
+Traceback (most recent call last):
+
+  File "<ipython-input-54-c37c11b9961a>", line 1, in <module>
+    sc=s('c','d')
+
+TypeError: __new__() takes 2 positional arguments but 3 were given
+
+
+
+
+sc=('c')
+
+sc
+Out[56]: 'c'
+
+sc=s('s')
+
+sc
+Out[58]: s(AB='s')
+
+import numpy as np
+
+np.random.randint(10,size=10)
+Out[60]: array([7, 7, 3, 7, 3, 5, 0, 2, 4, 4])
+
+a=np.random.randint(10,size=10)
+
+a
+Out[62]: array([9, 2, 9, 1, 3, 8, 6, 6, 7, 0])
+
+s=sum(a)
+
+s
+Out[64]: 51
+
+s=sum(x**x for x in a)
+
+s
+Out[66]: 792535082
+
+   
+
+
+
+import os
+
+file=os.listdir('dirname')
+Traceback (most recent call last):
+
+  File "<ipython-input-68-ffd0d57c2f8d>", line 1, in <module>
+    file=os.listdir('dirname')
+
+FileNotFoundError: [WinError 3] 系统找不到指定的路径。: 'dirname'
+
+
+
+
+file=os.listdir('%dirs')
+Traceback (most recent call last):
+
+  File "<ipython-input-69-73428e3e7cb8>", line 1, in <module>
+    file=os.listdir('%dirs')
+
+FileNotFoundError: [WinError 3] 系统找不到指定的路径。: '%dirs'
+
+
+
+
+file=os.listdir()
+
+file
+Out[71]: 
+['.anaconda',
+ '.android',
+ '.AndroidStudio3.2',
+ '.bash_history',
+ '.BigNox',
+ '.conda',
+ '.condarc',
+ '.config',
+ '.emulator_console_auth_token',
+ '.gitconfig',
+ '.gradle',
+ '.idlerc',
+ '.ipython',
+ '.LdVirtualBox',
+ '.matplotlib',
+ '.spyder-py3',
+ '.ssh',
+ '.VirtualBox',
+ 'AndroidStudioProjects',
+ 'AppData',
+ 'Application Data',
+ 'Contacts',
+ 'Cookies',
+ 'd4ac4633ebd6440fa397b84f1bc94a3c.7z',
+ 'Favorites',
+ 'Foxit Reader SDK ActiveX.ini',
+ 'Hello.java',
+ 'inittk.ini',
+ 'inst.ini',
+ 'IntelGraphicsProfiles',
+ 'Links',
+ 'Local Settings',
+ 'MicrosoftEdgeBackups',
+ 'Music',
+ 'My Documents',
+ 'NetHood',
+ 'Nox_share',
+ 'NTUSER.DAT',
+ 'ntuser.dat.LOG1',
+ 'ntuser.dat.LOG2',
+ 'NTUSER.DAT{acf20663-1ba4-11e8-83d4-f894c2bd03de}.TM.blf',
+ 'NTUSER.DAT{acf20663-1ba4-11e8-83d4-f894c2bd03de}.TMContainer00000000000000000001.regtrans-ms',
+ 'NTUSER.DAT{acf20663-1ba4-11e8-83d4-f894c2bd03de}.TMContainer00000000000000000002.regtrans-ms',
+ 'ntuser.ini',
+ 'ntuser.pol',
+ 'nuuid.ini',
+ 'Pictures',
+ 'pip',
+ 'PrintHood',
+ 'python123demo',
+ 'Recent',
+ 'Saved Games',
+ 'scikit_learn_data',
+ 'Searches',
+ 'SendTo',
+ 'skb.kc',
+ 'source',
+ 'Templates',
+ 'UnblockNeteaseMusic-master',
+ 'untitled0.py',
+ 'useruid.ini',
+ 'Videos',
+ 'VirtualBox VMs',
+ 'vmlogs',
+ '「开始」菜单']
+
+s=('acme'50,,123.45)
+  File "<ipython-input-72-d18d344791bb>", line 1
+    s=('acme'50,,123.45)
+              ^
+SyntaxError: invalid syntax
+
+
+
+
+s=('acme',50,123.45)
+
+print(','.join(str(x) for x in s))
+acme,50,123.45
+
+a={'x':1'y':2}
+  File "<ipython-input-75-f88a488f0b98>", line 1
+    a={'x':1'y':2}
+              ^
+SyntaxError: invalid syntax
+
+
+
+
+a={'x':1,'y':2}
+
+a
+Out[77]: {'x': 1, 'y': 2}
+
+b={'y':3,'z':4}
+
+from collections import ChainMap
+
+c=ChainMap(a,b)
+
+c
+Out[81]: ChainMap({'x': 1, 'y': 2}, {'y': 3, 'z': 4})
+
+--------第二章--------
