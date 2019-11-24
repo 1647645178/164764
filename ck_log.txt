@@ -535,3 +535,56 @@ c
 Out[81]: ChainMap({'x': 1, 'y': 2}, {'y': 3, 'z': 4})
 
 --------ตฺถþีย--------
+
+re.split(r'[;,\s]\s*',line)
+Out[85]: ['kaja', 'kaefj', 'aekl', 'eaklf', 'fff']
+
+filename='scji.py'
+
+filename.endswith('txt')
+Out[87]: False
+
+s='{name} is {f}'
+
+s.format(name='fish',f='me')
+Out[276]: 'fish is me'
+
+name='i'
+
+f='fish'
+
+s.format_map(vars())
+Out[279]: 'i is fish'
+
+class Info:
+    def __init__(self,name,f):
+        self.name=name
+        self.f=f
+        
+
+a=info(10,4)
+Traceback (most recent call last):
+
+  File "<ipython-input-281-a0dd896fa1fa>", line 1, in <module>
+    a=info(10,4)
+
+NameError: name 'info' is not defined
+
+
+
+
+a=Info(10,4)
+
+a
+Out[283]: <__main__.Info at 0x2504b8ef248>
+
+s.format_map(vars(a))
+Out[284]: '10 is 4'
+
+s.format(name=0)
+Traceback (most recent call last):
+
+  File "<ipython-input-285-cffadfed4ad8>", line 1, in <module>
+    s.format(name=0)
+
+KeyError: 'f'
