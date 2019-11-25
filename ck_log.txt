@@ -588,3 +588,324 @@ Traceback (most recent call last):
     s.format(name=0)
 
 KeyError: 'f'
+
+textwrap.fill(s,77)
+Out[315]: '我是一段很长很长很长的长字符，以至于我得转义换行，接着再换行'
+
+textwrap.fill(s,3)
+Out[316]: '我是一\n段很长\n很长很\n长的长\n字符，\n以至于\n我得转\n义换行\n，接着\n再换行'
+
+print(textwrap.fill(s,3))
+我是一
+段很长
+很长很
+长的长
+字符，
+以至于
+我得转
+义换行
+，接着
+再换行
+
+print(textwrap.fill(s,10,initial_indent=' '))
+ 我是一段很长很长很
+长的长字符，以至于我
+得转义换行，接着再换
+行
+
+print(textwrap.fill(s,10))
+我是一段很长很长很长
+的长字符，以至于我得
+转义换行，接着再换行
+
+print(textwrap.fill(s,10,subsequent_indent=' '))
+我是一段很长很长很长
+ 的长字符，以至于我
+ 得转义换行，接着再
+ 换行
+
+import os
+
+os.get_terminal_size().columns
+Traceback (most recent call last):
+
+  File "<ipython-input-322-863e08fd3df5>", line 1, in <module>
+    os.get_terminal_size().columns
+
+OSError: [WinError 6] 句柄无效。
+
+
+
+
+os.get_terminal_size().columns
+Traceback (most recent call last):
+
+  File "<ipython-input-323-863e08fd3df5>", line 1, in <module>
+    os.get_terminal_size().columns
+
+OSError: [WinError 6] 句柄无效。
+
+
+
+
+s='<html>haha</html>'
+
+import html
+
+html.escape(s)
+Out[326]: '&lt;html&gt;haha&lt;/html&gt;'
+
+s.encode('ascii')
+Out[327]: b'<html>haha</html>'
+
+text='foo
+  File "<ipython-input-328-6550bbabdd60>", line 1
+    text='foo
+             ^
+SyntaxError: EOL while scanning string literal
+
+
+
+
+text='foo=23+42*10'
+
+import re
+
+NAME=r'?P<NAME>[[a-zA-Z_0-9]*)'
+
+NAME=r'?P<NAME>[[a-zA-Z_][a-zA-Z_0-9]*)'
+
+NUM=r'(?P<NUM>\d+)'
+
+PLUS=r'(?P<PLUS>\d+)'
+
+PLUS=r'(?P<PLUS>\+)'
+
+TIMES=r'(？P<TIMES>\*)'
+
+EQ=r'(?P<EQ>=)'
+
+WS=r'(?P<WS>\s+)'
+
+master_pat=re.compile('|'.join([NAME,NUM,PLUS,TIMES,EQ,WS]))
+Traceback (most recent call last):
+
+  File "<ipython-input-339-7165229117c2>", line 1, in <module>
+    master_pat=re.compile('|'.join([NAME,NUM,PLUS,TIMES,EQ,WS]))
+
+  File "d:\Users\16476\Anaconda3\lib\re.py", line 234, in compile
+    return _compile(pattern, flags)
+
+  File "d:\Users\16476\Anaconda3\lib\re.py", line 286, in _compile
+    p = sre_compile.compile(pattern, flags)
+
+  File "d:\Users\16476\Anaconda3\lib\sre_compile.py", line 764, in compile
+    p = sre_parse.parse(p, flags)
+
+  File "d:\Users\16476\Anaconda3\lib\sre_parse.py", line 930, in parse
+    p = _parse_sub(source, pattern, flags & SRE_FLAG_VERBOSE, 0)
+
+  File "d:\Users\16476\Anaconda3\lib\sre_parse.py", line 426, in _parse_sub
+    not nested and not items))
+
+  File "d:\Users\16476\Anaconda3\lib\sre_parse.py", line 651, in _parse
+    source.tell() - here + len(this))
+
+error: nothing to repeat
+
+
+
+
+NAME=r'?P<NAME>[a-zA-Z_][a-zA-Z_0-9]*)'
+
+master_pat=re.compile('|'.join([NAME,NUM,PLUS,TIMES,EQ,WS]))
+Traceback (most recent call last):
+
+  File "<ipython-input-341-7165229117c2>", line 1, in <module>
+    master_pat=re.compile('|'.join([NAME,NUM,PLUS,TIMES,EQ,WS]))
+
+  File "d:\Users\16476\Anaconda3\lib\re.py", line 234, in compile
+    return _compile(pattern, flags)
+
+  File "d:\Users\16476\Anaconda3\lib\re.py", line 286, in _compile
+    p = sre_compile.compile(pattern, flags)
+
+  File "d:\Users\16476\Anaconda3\lib\sre_compile.py", line 764, in compile
+    p = sre_parse.parse(p, flags)
+
+  File "d:\Users\16476\Anaconda3\lib\sre_parse.py", line 930, in parse
+    p = _parse_sub(source, pattern, flags & SRE_FLAG_VERBOSE, 0)
+
+  File "d:\Users\16476\Anaconda3\lib\sre_parse.py", line 426, in _parse_sub
+    not nested and not items))
+
+  File "d:\Users\16476\Anaconda3\lib\sre_parse.py", line 651, in _parse
+    source.tell() - here + len(this))
+
+error: nothing to repeat
+
+
+
+
+TIMES=r'(?P<TIMES>\*)'
+
+master_pat=re.compile('|'.join([NAME,NUM,PLUS,TIMES,EQ,WS]))
+Traceback (most recent call last):
+
+  File "<ipython-input-343-7165229117c2>", line 1, in <module>
+    master_pat=re.compile('|'.join([NAME,NUM,PLUS,TIMES,EQ,WS]))
+
+  File "d:\Users\16476\Anaconda3\lib\re.py", line 234, in compile
+    return _compile(pattern, flags)
+
+  File "d:\Users\16476\Anaconda3\lib\re.py", line 286, in _compile
+    p = sre_compile.compile(pattern, flags)
+
+  File "d:\Users\16476\Anaconda3\lib\sre_compile.py", line 764, in compile
+    p = sre_parse.parse(p, flags)
+
+  File "d:\Users\16476\Anaconda3\lib\sre_parse.py", line 930, in parse
+    p = _parse_sub(source, pattern, flags & SRE_FLAG_VERBOSE, 0)
+
+  File "d:\Users\16476\Anaconda3\lib\sre_parse.py", line 426, in _parse_sub
+    not nested and not items))
+
+  File "d:\Users\16476\Anaconda3\lib\sre_parse.py", line 651, in _parse
+    source.tell() - here + len(this))
+
+error: nothing to repeat
+
+
+
+
+'|'.join([NAME,NUM,PLUS,TIMES,EQ,WS])
+Out[344]: '?P<NAME>[a-zA-Z_][a-zA-Z_0-9]*)|(?P<NUM>\\d+)|(?P<PLUS>\\+)|(?P<TIMES>\\*)|(?P<EQ>=)|(?P<WS>\\s+)'
+
+rec='|'.join([NAME,NUM,PLUS,TIMES,EQ,WS])
+
+re=re.compile(rec)
+Traceback (most recent call last):
+
+  File "<ipython-input-346-dbe4bd3b4a4d>", line 1, in <module>
+    re=re.compile(rec)
+
+  File "d:\Users\16476\Anaconda3\lib\re.py", line 234, in compile
+    return _compile(pattern, flags)
+
+  File "d:\Users\16476\Anaconda3\lib\re.py", line 286, in _compile
+    p = sre_compile.compile(pattern, flags)
+
+  File "d:\Users\16476\Anaconda3\lib\sre_compile.py", line 764, in compile
+    p = sre_parse.parse(p, flags)
+
+  File "d:\Users\16476\Anaconda3\lib\sre_parse.py", line 930, in parse
+    p = _parse_sub(source, pattern, flags & SRE_FLAG_VERBOSE, 0)
+
+  File "d:\Users\16476\Anaconda3\lib\sre_parse.py", line 426, in _parse_sub
+    not nested and not items))
+
+  File "d:\Users\16476\Anaconda3\lib\sre_parse.py", line 651, in _parse
+    source.tell() - here + len(this))
+
+error: nothing to repeat
+
+
+
+
+NAME = r'(?P<NAME>[a-zA-Z_][a-zA-Z_0-9]*)'
+NUM = r'(?P<NUM>\d+)'
+PLUS = r'(?P<PLUS>\+)'
+TIMES = r'(?P<TIMES>\*)'
+EQ = r'(?P<EQ>=)'
+WS = r'(?P<WS>\s+)'
+
+master_pat=re.compile('|'.join([NAME,NUM,PLUS,TIMES,EQ,WS]))
+
+rec='|'.join([NAME,NUM,PLUS,TIMES,EQ,WS])
+
+rec
+Out[350]: '(?P<NAME>[a-zA-Z_][a-zA-Z_0-9]*)|(?P<NUM>\\d+)|(?P<PLUS>\\+)|(?P<TIMES>\\*)|(?P<EQ>=)|(?P<WS>\\s+)'
+
+scanner=master_pat('foo= 42')
+Traceback (most recent call last):
+
+  File "<ipython-input-351-8c5fb04b62db>", line 1, in <module>
+    scanner=master_pat('foo= 42')
+
+TypeError: 're.Pattern' object is not callable
+
+
+
+
+scanner=master_pat.scanner('foo= 42')
+
+scanner.match
+Out[353]: <function SRE_Scanner.match()>
+
+scanner.match()
+Out[354]: <re.Match object; span=(0, 3), match='foo'>
+
+_.lastgroup,_.group()
+Out[355]: ('NAME', 'foo')
+
+_.lastgroup,_.group()
+Traceback (most recent call last):
+
+  File "<ipython-input-356-41a1219e790e>", line 1, in <module>
+    _.lastgroup,_.group()
+
+AttributeError: 'tuple' object has no attribute 'lastgroup'
+
+
+
+
+scanner.match()
+Out[357]: <re.Match object; span=(3, 4), match='='>
+
+_.lastgroup,_.group()
+Out[358]: ('EQ', '=')
+
+_.lastgroup,_.group()
+Traceback (most recent call last):
+
+  File "<ipython-input-359-41a1219e790e>", line 1, in <module>
+    _.lastgroup,_.group()
+
+AttributeError: 'tuple' object has no attribute 'lastgroup'
+
+
+
+
+scanner.match()
+Out[360]: <re.Match object; span=(4, 5), match=' '>
+
+_.lastgroup,_.group()
+Out[361]: ('WS', ' ')
+
+scanner.match()
+Out[362]: <re.Match object; span=(5, 7), match='42'>
+
+_.lastgroup,_.group()
+Out[363]: ('NUM', '42')
+
+scanner.match()
+
+from collections import  namedtuple
+
+Token=namedtuple('Token',['type','value'])
+
+def generate_tokens(pat,text):
+    scanner=pat.scanner(text)
+    for m in iter(scanner.match,None):
+        yield Token(m.lastgroup,m.group())
+        
+
+for tok in generate_tokens(master_pat,'foo= 33+22'):
+    print(tok)
+    
+Token(type='NAME', value='foo')
+Token(type='EQ', value='=')
+Token(type='WS', value=' ')
+Token(type='NUM', value='33')
+Token(type='PLUS', value='+')
+Token(type='NUM', value='22')
