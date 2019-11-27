@@ -909,3 +909,497 @@ Token(type='WS', value=' ')
 Token(type='NUM', value='33')
 Token(type='PLUS', value='+')
 Token(type='NUM', value='22')
+
+n [89]: 
+
+int('11111111',8)
+Out[89]: 2396745
+
+int('11111111',3)
+Out[90]: 3280
+
+data=b'\x00\x124v\x00'
+
+len(data)
+Out[92]: 5
+
+a=complex(2,4)
+
+b=3-5j
+
+a
+Out[95]: (2+4j)
+
+b
+Out[96]: (3-5j)
+
+a.real
+Out[97]: 2.0
+
+a.imag
+Out[98]: 4.0
+
+a.conjugate
+Out[99]: <function complex.conjugate>
+
+a.conjugate()
+Out[100]: (2-4j)
+
+abs(a)
+Out[101]: 4.47213595499958
+
+import cmath
+
+cmath.cos(0)
+Out[103]: (1-0j)
+
+cmath.cos(a)
+Out[104]: (-11.36423470640106-24.814651485634187j)
+
+cmath.sqrt(-1)
+Out[105]: 1j
+
+ a=float('inf')
+
+a
+Out[107]: inf
+
+a=float('nan')
+
+a
+Out[109]: nan
+
+math.isnan(a)
+Out[110]: True
+
+from fractions import Fraction
+
+a=Fraction(5,4)
+
+a
+Out[113]: Fraction(5, 4)
+
+b=Fraction(3,2)
+
+print(a+b)
+11/4
+
+print(a)
+5/4
+
+c=a*b
+
+c
+Out[118]: Fraction(15, 8)
+
+c.numerator
+Out[119]: 15
+
+c.denominator
+Out[120]: 8
+
+float(c)
+Out[121]: 1.875
+
+print(c.limit_denominator(8))
+15/8
+
+print(c.limit_denominator(7))
+13/7
+
+print(c.limit_denominator(2))
+2
+
+import numpy as np
+
+x=[1,2,3,4]
+
+y=[5,6,7,8]
+
+x*2
+Out[128]: [1, 2, 3, 4, 1, 2, 3, 4]
+
+x+10
+Traceback (most recent call last):
+
+  File "<ipython-input-129-e0cbb565319e>", line 1, in <module>
+    x+10
+
+TypeError: can only concatenate list (not "int") to list
+
+
+
+
+x+y
+Out[130]: [1, 2, 3, 4, 5, 6, 7, 8]
+
+ax=np.arrange(10)
+Traceback (most recent call last):
+
+  File "<ipython-input-131-d91542cd4b53>", line 1, in <module>
+    ax=np.arrange(10)
+
+AttributeError: module 'numpy' has no attribute 'arrange'
+
+
+
+
+ax=np.array(np.arange(10))
+
+ax
+Out[133]: array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+ax*2
+Out[134]: array([ 0,  2,  4,  6,  8, 10, 12, 14, 16, 18])
+
+ax+10
+Out[135]: array([10, 11, 12, 13, 14, 15, 16, 17, 18, 19])
+
+ax*ax
+Out[136]: array([ 0,  1,  4,  9, 16, 25, 36, 49, 64, 81])
+
+np.sqrt(ax)
+Out[137]: 
+array([0.        , 1.        , 1.41421356, 1.73205081, 2.        ,
+       2.23606798, 2.44948974, 2.64575131, 2.82842712, 3.        ])
+
+np.cos(ax)
+Out[138]: 
+array([ 1.        ,  0.54030231, -0.41614684, -0.9899925 , -0.65364362,
+        0.28366219,  0.96017029,  0.75390225, -0.14550003, -0.91113026])
+
+grid=np.zeros(shape=(10000,10000),dtype=float)
+
+grid
+Out[140]: 
+array([[0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       ...,
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.]])
+
+grid+=10
+
+grid+=10
+
+grid
+Out[143]: 
+array([[20., 20., 20., ..., 20., 20., 20.],
+       [20., 20., 20., ..., 20., 20., 20.],
+       [20., 20., 20., ..., 20., 20., 20.],
+       ...,
+       [20., 20., 20., ..., 20., 20., 20.],
+       [20., 20., 20., ..., 20., 20., 20.],
+       [20., 20., 20., ..., 20., 20., 20.]])
+
+a=np.array(np.arange(1,13)).reshape(3,4)
+
+a
+Out[145]: 
+array([[ 1,  2,  3,  4],
+       [ 5,  6,  7,  8],
+       [ 9, 10, 11, 12]])
+
+a[1:3,1:3]
+Out[146]: 
+array([[ 6,  7],
+       [10, 11]])
+
+a[1:3,1:3]+=10
+
+a[1:3,1:3]
+Out[148]: 
+array([[16, 17],
+       [20, 21]])
+
+a
+Out[149]: 
+array([[ 1,  2,  3,  4],
+       [ 5, 16, 17,  8],
+       [ 9, 20, 21, 12]])
+
+a[:,:]
+Out[150]: 
+array([[ 1,  2,  3,  4],
+       [ 5, 16, 17,  8],
+       [ 9, 20, 21, 12]])
+
+a+[1,1,1,1]
+Out[151]: 
+array([[ 2,  3,  4,  5],
+       [ 6, 17, 18,  9],
+       [10, 21, 22, 13]])
+
+a
+Out[152]: 
+array([[ 1,  2,  3,  4],
+       [ 5, 16, 17,  8],
+       [ 9, 20, 21, 12]])
+
+a[:,:]+[1,1,1,1]
+Out[153]: 
+array([[ 2,  3,  4,  5],
+       [ 6, 17, 18,  9],
+       [10, 21, 22, 13]])
+
+a
+Out[154]: 
+array([[ 1,  2,  3,  4],
+       [ 5, 16, 17,  8],
+       [ 9, 20, 21, 12]])
+
+np.where(a<10,a,10)
+Out[155]: 
+array([[ 1,  2,  3,  4],
+       [ 5, 10, 10,  8],
+       [ 9, 10, 10, 10]])
+
+  a
+Out[156]: 
+array([[ 1,  2,  3,  4],
+       [ 5, 16, 17,  8],
+       [ 9, 20, 21, 12]])
+
+a=np.matrix(np.arange(1,13)).reshape(3,4)
+
+a
+Out[158]: 
+matrix([[ 1,  2,  3,  4],
+        [ 5,  6,  7,  8],
+        [ 9, 10, 11, 12]])
+
+m.T
+Traceback (most recent call last):
+
+  File "<ipython-input-159-a4ee52bc5d60>", line 1, in <module>
+    m.T
+
+NameError: name 'm' is not defined
+
+
+
+
+a.T
+Out[160]: 
+matrix([[ 1,  5,  9],
+        [ 2,  6, 10],
+        [ 3,  7, 11],
+        [ 4,  8, 12]])
+
+a=np.matrix(np.arange(9)).reshape(3,3)
+
+a
+Out[162]: 
+matrix([[0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8]])
+
+a.I
+Traceback (most recent call last):
+
+  File "<ipython-input-163-105ed6093821>", line 1, in <module>
+    a.I
+
+  File "d:\Users\16476\Anaconda3\lib\site-packages\numpy\matrixlib\defmatrix.py", line 836, in getI
+    return asmatrix(func(self))
+
+  File "d:\Users\16476\Anaconda3\lib\site-packages\numpy\linalg\linalg.py", line 551, in inv
+    ainv = _umath_linalg.inv(a, signature=signature, extobj=extobj)
+
+  File "d:\Users\16476\Anaconda3\lib\site-packages\numpy\linalg\linalg.py", line 97, in _raise_linalgerror_singular
+    raise LinAlgError("Singular matrix")
+
+LinAlgError: Singular matrix
+
+
+
+
+import numpy.linalg
+
+numpy.linalg(a)
+Traceback (most recent call last):
+
+  File "<ipython-input-165-9601a69546e8>", line 1, in <module>
+    numpy.linalg(a)
+
+TypeError: 'module' object is not callable
+
+
+
+
+numpy.linalg.det(a)
+Out[166]: 0.0
+
+numpy.linalg.eigvals(a)
+Out[167]: array([ 1.33484692e+01, -1.34846923e+00, -1.15433316e-15])
+
+import random
+
+values=[1,2,3,4,5,6]
+
+random.choice(values)
+Out[170]: 2
+
+random.choice(values)
+Out[171]: 3
+
+random.choice(values)
+Out[172]: 3
+
+random.choice(values)
+Out[173]: 3
+
+random.choice(values)
+Out[174]: 2
+
+random.choice(values)
+Out[175]: 5
+
+random.choice(values)
+Out[176]: 2
+
+random.choice(values)
+Out[177]: 2
+
+random.choice(values)
+Out[178]: 5
+
+random.choice(values)
+Out[179]: 4
+
+random.choice(values)
+Out[180]: 2
+
+random.choice(values)
+Out[181]: 4
+
+random.choice(values)
+Out[182]: 5
+
+random.choice(values)
+Out[183]: 3
+
+random.sample(values,2)
+Out[184]: [6, 3]
+
+random.shuffle(values,2)
+Traceback (most recent call last):
+
+  File "<ipython-input-185-1a532af8aeaa>", line 1, in <module>
+    random.shuffle(values,2)
+
+  File "d:\Users\16476\Anaconda3\lib\random.py", line 283, in shuffle
+    j = _int(random() * (i+1))
+
+TypeError: 'int' object is not callable
+
+
+
+
+random.shuffle(values)
+
+values
+Out[187]: [5, 2, 6, 3, 1, 4]
+
+random.randint(0,10)
+Out[188]: 6
+
+random.random(0,10)
+Traceback (most recent call last):
+
+  File "<ipython-input-189-d9ae151f77b7>", line 1, in <module>
+    random.random(0,10)
+
+TypeError: random() takes no arguments (2 given)
+
+
+
+
+random.random()
+Out[190]: 0.6787107338169545
+
+random.getrandbits(2000)
+Out[191]: 65064673577462835504122282079660576594584419506899091788879677305280447902739267176533338223406614483375724583086323647313660147418354706259315053466722062632421622873896693904035890205804801219262045070556715230353206040310919468925808892670344130954534286249297865469608698320589020235321907041253897636683552140955606853337747512195408746365611044743438205068018181825331309490816663684575744825684887342402724444262668653467804513719254077427159866206972908528214615747741613962882593558690462324194350199580522038880600791169505801825575559991989257183402554722439946805894867966082558466684855757
+
+from datetime import timedelta
+
+a=timedelta(days=2,hours=6)
+
+a
+Out[194]: datetime.timedelta(days=2, seconds=21600)
+
+b=timedelta(hours=4.5)
+
+c=a+b
+
+c
+Out[197]: datetime.timedelta(days=2, seconds=37800)
+
+c.total_seconds()
+Out[198]: 210600.0
+
+c.total_seconds()/3600
+Out[199]: 58.5
+
+from datetime import datetime
+
+a=datetime(2019,11,26)
+
+print(a+timedelta(day=10))
+Traceback (most recent call last):
+
+  File "<ipython-input-202-6ddf1aaad315>", line 1, in <module>
+    print(a+timedelta(day=10))
+
+TypeError: 'day' is an invalid keyword argument for __new__()
+
+
+
+
+print(a+timedelta(days=10))
+2019-12-06 00:00:00
+
+d=a+timedelta(days=10)
+
+d
+Out[205]: datetime.datetime(2019, 12, 6, 0, 0)
+
+d.days
+Traceback (most recent call last):
+
+  File "<ipython-input-206-5d3d40811b44>", line 1, in <module>
+    d.days
+
+AttributeError: 'datetime.datetime' object has no attribute 'days'
+
+
+
+
+datetime.today()
+Out[207]: datetime.datetime(2019, 11, 27, 17, 17, 41, 303856)
+
+from dateutil.relativedelta import relativedelta
+
+a
+Out[209]: datetime.datetime(2019, 11, 26, 0, 0)
+
+a+relativedelta(months=+4)
+Out[210]: datetime.datetime(2020, 3, 26, 0, 0)
+
+a+relativedelta(months=-4)
+Out[211]: datetime.datetime(2019, 7, 26, 0, 0)
+
+b
+Out[212]: datetime.timedelta(seconds=16200)
+
+b=datetime(2019,1,22)
+
+d=b-a
+
+d
+Out[215]: datetime.timedelta(days=-308)
+
+relativedelta(a,b)
+Out[216]: relativedelta(months=+10, days=+4)
