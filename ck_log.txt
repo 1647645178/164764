@@ -1403,3 +1403,504 @@ Out[215]: datetime.timedelta(days=-308)
 
 relativedelta(a,b)
 Out[216]: relativedelta(months=+10, days=+4)
+
+
+
+def frange(start ,stop,increment):
+    x=start
+    while x<=stop:
+        yield x
+        x+=increment
+        
+
+frange(1,5,2)
+Out[31]: <generator object frange at 0x0000026946AB9CC8>
+
+for i in frange(1,5,2):
+    print（ｉ）
+  File "<ipython-input-32-422bb8d5ab81>", line 2
+    print（ｉ）
+           ^
+SyntaxError: invalid character in identifier
+
+
+
+
+for i in frange(1,5,2):
+    print(i)
+    
+1
+3
+5
+
+a=frange(1,5,2)
+
+sum(a)
+Out[35]: 9
+
+list(a)
+Out[36]: []
+
+print(list(a))
+[]
+
+list(frange(0,1,0.125))
+
+Out[38]: [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1.0]
+
+list(frange(1,5,2))
+Out[39]: [1, 3, 5]
+
+a
+Out[40]: <generator object frange at 0x00000269469D25C8>
+
+list(a)
+Out[41]: []
+
+a==frange(1,5,2)
+Out[42]: False
+
+b=frange(1,5,2)
+
+a==b
+Out[44]: False
+
+sum(b)
+Out[45]: 9
+
+frange(1,5,2)
+Out[46]: <generator object frange at 0x00000269469D28C8>
+
+b
+Out[47]: <generator object frange at 0x00000269469D2648>
+
+#树节点，深度优先
+
+runfile('C:/Users/16476/untitled1.py', wdir='C:/Users/16476')
+Traceback (most recent call last):
+
+  File "<ipython-input-49-5fcc9abdec61>", line 1, in <module>
+    runfile('C:/Users/16476/untitled1.py', wdir='C:/Users/16476')
+
+  File "D:\Users\16476\Anaconda3\lib\site-packages\spyder_kernels\customize\spydercustomize.py", line 827, in runfile
+    execfile(filename, namespace)
+
+  File "D:\Users\16476\Anaconda3\lib\site-packages\spyder_kernels\customize\spydercustomize.py", line 110, in execfile
+    exec(compile(f.read(), filename, 'exec'), namespace)
+
+  File "C:/Users/16476/untitled1.py", line 22, in <module>
+    root =Node(0)
+
+TypeError: Node() takes no arguments
+
+
+
+
+runfile('C:/Users/16476/untitled1.py', wdir='C:/Users/16476')
+
+class Node:
+    def __init__(self,value):
+        self._value=value
+        self._children=[]
+    def __repr__(self):
+        return 'Node{(!r)}'.format(self.__value)
+    def add_child(self,node):
+        self._children.append(node)
+    def __inter__(self):
+        return iter(self._children)
+    def depth_first(self):
+        yield self
+        for c in self:
+            yield from c.depth_first()
+if __name__=='__main__':
+    root =Node(0)
+    child1=Node(1)
+    child2=Node(2)
+    root.add_child(child1)
+    root.add_child(child2)
+    child1.add_child(Node(4))
+    child1.add_child(Node(5))
+    child2.add_child(Node(3))
+    child2.add_child(Node(00000))
+    
+
+for ch in root.depth_first():
+    print(ch)
+    
+Traceback (most recent call last):
+
+  File "<ipython-input-52-1300f4843ba9>", line 2, in <module>
+    print(ch)
+
+  File "<ipython-input-51-ba451f45aebf>", line 6, in __repr__
+    return 'Node{(!r)}'.format(self.__value)
+
+AttributeError: 'Node' object has no attribute '_Node__value'
+
+
+
+
+runfile('C:/Users/16476/untitled1.py', wdir='C:/Users/16476')
+
+runfile('C:/Users/16476/untitled1.py', wdir='C:/Users/16476')
+Traceback (most recent call last):
+
+  File "D:\Users\16476\Anaconda3\lib\site-packages\IPython\core\interactiveshell.py", line 3326, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+
+  File "<ipython-input-54-5fcc9abdec61>", line 1, in <module>
+    runfile('C:/Users/16476/untitled1.py', wdir='C:/Users/16476')
+
+  File "D:\Users\16476\Anaconda3\lib\site-packages\spyder_kernels\customize\spydercustomize.py", line 827, in runfile
+    execfile(filename, namespace)
+
+  File "D:\Users\16476\Anaconda3\lib\site-packages\spyder_kernels\customize\spydercustomize.py", line 110, in execfile
+    exec(compile(f.read(), filename, 'exec'), namespace)
+
+  File "C:/Users/16476/untitled1.py", line 32
+    print(ch)
+        ^
+IndentationError: expected an indented block
+
+
+
+
+runfile('C:/Users/16476/untitled1.py', wdir='C:/Users/16476')
+Traceback (most recent call last):
+
+  File "<ipython-input-55-5fcc9abdec61>", line 1, in <module>
+    runfile('C:/Users/16476/untitled1.py', wdir='C:/Users/16476')
+
+  File "D:\Users\16476\Anaconda3\lib\site-packages\spyder_kernels\customize\spydercustomize.py", line 827, in runfile
+    execfile(filename, namespace)
+
+  File "D:\Users\16476\Anaconda3\lib\site-packages\spyder_kernels\customize\spydercustomize.py", line 110, in execfile
+    exec(compile(f.read(), filename, 'exec'), namespace)
+
+  File "C:/Users/16476/untitled1.py", line 32, in <module>
+    print(ch)
+
+  File "C:/Users/16476/untitled1.py", line 12, in __repr__
+    return 'Node{(!r)}'.format(self._value)
+
+ValueError: expected ':' after conversion specifier
+
+
+
+
+class Node:
+    def __init__(self,value):
+        self._value=value
+        self._children=[]
+    def __repr__(self):
+        return 'Node{(!r)}'.format(self._value)
+    def add_child(self,node):
+        self._children.append(node)
+    def __inter__(self):
+        return iter(self._children)
+    def depth_first(self):
+        yield self
+        for c in self:
+            yield from c.depth_first()
+if __name__=='__main__':
+    root =Node(0)
+    child1=Node(1)
+    child2=Node(2)
+    root.add_child(child1)
+    root.add_child(child2)
+    child1.add_child(Node(4))
+    child1.add_child(Node(5))
+    child2.add_child(Node(3))
+    child2.add_child(Node(00000))
+    
+
+for ch in root.depth_first():
+        print(ch)
+        
+Traceback (most recent call last):
+
+  File "<ipython-input-57-bab6c61fe318>", line 2, in <module>
+    print(ch)
+
+  File "<ipython-input-56-205a7d19b7ad>", line 6, in __repr__
+    return 'Node{(!r)}'.format(self._value)
+
+ValueError: expected ':' after conversion specifier
+
+
+
+
+runfile('C:/Users/16476/untitled1.py', wdir='C:/Users/16476')
+Node(0)
+Traceback (most recent call last):
+
+  File "<ipython-input-58-5fcc9abdec61>", line 1, in <module>
+    runfile('C:/Users/16476/untitled1.py', wdir='C:/Users/16476')
+
+  File "D:\Users\16476\Anaconda3\lib\site-packages\spyder_kernels\customize\spydercustomize.py", line 827, in runfile
+    execfile(filename, namespace)
+
+  File "D:\Users\16476\Anaconda3\lib\site-packages\spyder_kernels\customize\spydercustomize.py", line 110, in execfile
+    exec(compile(f.read(), filename, 'exec'), namespace)
+
+  File "C:/Users/16476/untitled1.py", line 31, in <module>
+    for ch in root.depth_first():
+
+  File "C:/Users/16476/untitled1.py", line 19, in depth_first
+    for c in self:
+
+TypeError: 'Node' object is not iterable
+
+
+
+
+runfile('C:/Users/16476/untitled1.py', wdir='C:/Users/16476')
+Node(0)
+Node(1)
+Node(4)
+Node(5)
+Node(2)
+Node(3)
+Node(0)
+
+class Node:
+    def __init__(self,value):
+        self._value=value
+        self._children=[]
+    def __repr__(self):
+        return 'Node({!r})'.format(self._value)
+    def add_child(self,node):
+        self._children.append(node)
+    def __iter__(self):
+        return iter(self._children)
+    def depth_first(self):
+        yield self
+        for c in self:
+            yield from c.depth_first()
+if __name__=='__main__':
+    root =Node(0)
+    child1=Node(1)
+    child2=Node(2)
+    root.add_child(child1)
+    root.add_child(child2)
+    child1.add_child(Node(4))
+    child1.add_child(Node(5))
+    child2.add_child(Node(3))
+    child2.add_child(Node(00000))
+    for ch in root.depth_first():
+        print(ch)
+        
+Node(0)
+Node(1)
+Node(4)
+Node(5)
+Node(2)
+Node(3)
+Node(0)
+
+next(root)
+Traceback (most recent call last):
+
+  File "<ipython-input-61-49ee399c1ae1>", line 1, in <module>
+    next(root)
+
+TypeError: 'Node' object is not an iterator
+
+
+
+
+next(root.depth_first())
+Out[62]: Node(0)
+
+next(root.depth_first())
+Out[63]: Node(0)
+
+next(iter(root))
+Out[64]: Node(1)
+
+next(iter(root))
+Out[65]: Node(1)
+
+
+
+next(iter(root))
+Out[66]: Node(1)
+
+root
+Out[67]: Node(0)
+
+for ch in root:
+    print(ch)
+    
+Node(1)
+Node(2)
+
+a=[1,2,3,4]
+
+for x in reversed( a):
+    print(a)
+    
+[1, 2, 3, 4]
+[1, 2, 3, 4]
+[1, 2, 3, 4]
+[1, 2, 3, 4]
+
+for x in reversed( a):
+    print(x)
+    
+4
+3
+2
+1
+
+f=open(ck.txt)
+Traceback (most recent call last):
+
+  File "<ipython-input-72-df7120787cfa>", line 1, in <module>
+    f=open(ck.txt)
+
+NameError: name 'ck' is not defined
+
+
+
+
+f=open('ck.txt')
+Traceback (most recent call last):
+
+  File "<ipython-input-73-c38b2b982978>", line 1, in <module>
+    f=open('ck.txt')
+
+FileNotFoundError: [Errno 2] No such file or directory: 'ck.txt'
+
+
+
+
+f=open('ck.txt')
+
+for line in reversed(list(f)):
+    print (line)
+    
+'''
+
+Out[7]: Counter({1: 3, 2: 2, 3: 1})
+
+wc
+
+
+
+wc.update()
+
+
+
+Out[5]: [(1, 3), (2, 2)]
+
+a
+
+
+
+a=wc.most_common(2)
+
+
+
+wc=Counter(w)
+
+
+
+from collections import Counter
+
+'''
+
+w=[1,1,1,2,2,3]
+
+a[s]
+
+s=slice(2,4)
+
+list(dedupe(a))
+
+a=np.random.randint(10,size=10)
+
+            seen.add(item)
+
+            yield item 
+
+        if item not in seen:
+
+    for item in items:
+
+    seen = set()
+
+def dedupe(items):
+
+import numpy as np
+
+"""
+
+@author: 16476
+
+
+
+Created on Sun Nov 17 11:16:49 2019
+
+"""
+
+# -*- coding: utf-8 -*-
+
+
+runfile('C:/Users/16476/untitled1.py')
+
+for line in Countdown(f):
+    print (line)
+    
+Traceback (most recent call last):
+
+  File "<ipython-input-77-8f5d9ab26165>", line 1, in <module>
+    for line in Countdown(f):
+
+  File "C:/Users/16476/untitled1.py", line 6, in __iter__
+    while n>0:
+
+TypeError: '>' not supported between instances of '_io.TextIOWrapper' and 'int'
+
+
+
+
+for line in Countdown(f).__reversed__:
+    print (line)
+    
+Traceback (most recent call last):
+
+  File "<ipython-input-78-a68512b546e3>", line 1, in <module>
+    for line in Countdown(f).__reversed__:
+
+TypeError: 'method' object is not iterable
+
+
+
+
+a=Countdown(f)
+
+a
+Out[80]: <__main__.Countdown at 0x26946a74a88>
+
+a.start
+Out[81]: <_io.TextIOWrapper name='ck.txt' mode='r' encoding='cp936'>
+
+reversed(a)
+Out[82]: <generator object Countdown.__reversed__ at 0x0000026946A76F48>
+
+for line in reversed(a):
+    print (line)
+    
+Traceback (most recent call last):
+
+  File "<ipython-input-83-f7f5b705532b>", line 1, in <module>
+    for line in reversed(a):
+
+  File "C:/Users/16476/untitled1.py", line 11, in __reversed__
+    while n<=self.start:
+
+TypeError: '<=' not supported between instances of 'int' and '_io.TextIOWrapper'
+
+
+
