@@ -2367,3 +2367,422 @@ a=[1,2,3,4]
 a=[1,4,7]
 
 
+a[100]
+Out[29]: 17
+
+a[0:10]
+Out[30]: b'\xff\xd8\xff\xe0\x00\x10JFIF'
+
+str(a[0:10])
+Out[31]: "b'\\xff\\xd8\\xff\\xe0\\x00\\x10JFIF'"
+
+str(a[0:10],encoding='utf-8')
+Traceback (most recent call last):
+
+  File "<ipython-input-32-6eb697bc14a7>", line 1, in <module>
+    str(a[0:10],encoding='utf-8')
+
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+
+
+
+
+a[0:10].decode(a)
+Traceback (most recent call last):
+
+  File "<ipython-input-33-dff5f3b36dff>", line 1, in <module>
+    a[0:10].decode(a)
+
+TypeError: decode() argument 1 must be str, not bytes
+
+
+
+
+a[0:10].decode(s)
+Traceback (most recent call last):
+
+  File "<ipython-input-34-ed902a8e40dd>", line 1, in <module>
+    a[0:10].decode(s)
+
+NameError: name 's' is not defined
+
+
+
+
+s=''
+
+a[0:10].decode(s)
+Traceback (most recent call last):
+
+  File "<ipython-input-36-ed902a8e40dd>", line 1, in <module>
+    a[0:10].decode(s)
+
+LookupError: unknown encoding: 
+
+
+
+
+a.decode('utf-8')
+Traceback (most recent call last):
+
+  File "<ipython-input-37-fe89aebaa52b>", line 1, in <module>
+    a.decode('utf-8')
+
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+
+
+
+
+with open('io.py','xt') as f:
+    f.write('hh\n')
+    
+Traceback (most recent call last):
+
+  File "<ipython-input-38-404dec0738c8>", line 1, in <module>
+    with open('io.py','xt') as f:
+
+FileExistsError: [Errno 17] File exists: 'io.py'
+
+
+
+
+import os
+
+os.path
+Out[40]: <module 'ntpath' from 'D:\\Users\\16476\\Anaconda3\\lib\\ntpath.py'>
+
+os.path.exists('io.py')
+Out[41]: True
+
+s=io.StringIO()
+Traceback (most recent call last):
+
+  File "<ipython-input-42-783f615e6061>", line 1, in <module>
+    s=io.StringIO()
+
+NameError: name 'io' is not defined
+
+
+
+
+import io
+
+s=io.StringIO()
+
+s
+Out[45]: <_io.StringIO at 0x110a2d3c1f8>
+
+s.write('Hh\n')
+Out[46]: 3
+
+s.getvalue()
+Out[47]: 'Hh\n'
+
+s.read()
+Out[48]: ''
+
+s
+Out[49]: <_io.StringIO at 0x110a2d3c1f8>
+
+s.close()
+
+s
+Out[51]: <_io.StringIO at 0x110a2d3c1f8>
+
+s.read(2)
+Traceback (most recent call last):
+
+  File "<ipython-input-52-f002bed45c01>", line 1, in <module>
+    s.read(2)
+
+ValueError: I/O operation on closed file
+
+
+
+
+open(s)
+Traceback (most recent call last):
+
+  File "<ipython-input-53-b99e7aca8437>", line 1, in <module>
+    open(s)
+
+TypeError: expected str, bytes or os.PathLike object, not _io.StringIO
+
+
+
+
+import gzip
+
+with gzip.open('io.zip','rt') as f:
+    f.read(10)
+    
+Traceback (most recent call last):
+
+  File "<ipython-input-55-cce4a8264925>", line 2, in <module>
+    f.read(10)
+
+  File "D:\Users\16476\Anaconda3\lib\gzip.py", line 289, in read1
+    return self._buffer.read1(size)
+
+  File "D:\Users\16476\Anaconda3\lib\_compression.py", line 68, in readinto
+    data = self.read(len(byte_view))
+
+  File "D:\Users\16476\Anaconda3\lib\gzip.py", line 463, in read
+    if not self._read_gzip_header():
+
+  File "D:\Users\16476\Anaconda3\lib\gzip.py", line 411, in _read_gzip_header
+    raise OSError('Not a gzipped file (%r)' % magic)
+
+OSError: Not a gzipped file (b'PK')
+
+a
+
+
+import os.path
+
+path ='a/b/c/d.c'
+
+os.path.basename(path)
+Out[58]: 'd.c'
+
+os.path.dirname(path)
+Out[59]: 'a/b/c'
+
+os.patn.join('a','a')
+Traceback (most recent call last):
+
+  File "<ipython-input-60-c4776266d73c>", line 1, in <module>
+    os.patn.join('a','a')
+
+AttributeError: module 'os' has no attribute 'patn'
+
+
+
+
+os.patn.join('a','b',os.path.basename(path))
+Traceback (most recent call last):
+
+  File "<ipython-input-61-7fbe986c2208>", line 1, in <module>
+    os.patn.join('a','b',os.path.basename(path))
+
+AttributeError: module 'os' has no attribute 'patn'
+
+
+
+
+os.path.join('a','b')
+Out[62]: 'a\\b'
+
+os.path.expanduser('python\\io.7z')
+Out[63]: 'python\\io.7z'
+
+os.path.expanduser('~\\python\\io.7z')
+Out[64]: 'C:\\Users\\16476\\python\\io.7z'
+
+os.path.exists('ck_log.txt')
+Out[65]: True
+
+os.path.exists('python')
+Out[66]: False
+
+os.path.exists('.git')
+Out[67]: True
+
+os.path.isfile('.git')
+Out[68]: False
+
+os.path.isdir('.git')
+Out[69]: True
+
+os.path.islink('.git')
+Out[70]: False
+
+os.path.islink('python/.git')
+Out[71]: False
+
+os.path.islink('/python/.git')
+Out[72]: False
+
+os.path.getsize('/python/.git')
+Out[73]: 4096
+
+os.path.gettime('/python/.git')
+Traceback (most recent call last):
+
+  File "<ipython-input-74-54c025de4a96>", line 1, in <module>
+    os.path.gettime('/python/.git')
+
+AttributeError: module 'ntpath' has no attribute 'gettime'
+
+
+
+
+os.path.getmtime('/python/.git')
+Out[75]: 1575169406.0499172
+
+import time
+
+time.ctime(os.path.getmtime('/python/.git'))
+Out[77]: 'Sun Dec  1 11:03:26 2019'
+
+time.ctime(os.path.getmtime('/python/.git')).split(' ')
+Out[78]: ['Sun', 'Dec', '', '1', '11:03:26', '2019']
+
+name=os.listdir()
+
+name
+Out[80]: 
+['.git',
+ '1.png',
+ '4.jpg',
+ 'ck.txt',
+ 'ck_log.txt',
+ 'io.7z',
+ 'io.py',
+ 'io.zip',
+ 'jalapexflo.txt',
+ 'plot',
+ 'readme.txt',
+ 'test',
+ 'untitled0.py',
+ 'untitled1.py',
+ 'Í¼Æ¬·Ö²ã.py',
+ '½µÎ¬.py',
+ '½µÎ¬2py.py']
+
+name=(n for n in os.listdir() if os.path.isfile(name))
+
+name
+Out[82]: <generator object <genexpr> at 0x00000110A22CB148>
+
+next(nanme)
+Traceback (most recent call last):
+
+  File "<ipython-input-83-1f87d72c9366>", line 1, in <module>
+    next(nanme)
+
+NameError: name 'nanme' is not defined
+
+
+
+
+next(name)
+Traceback (most recent call last):
+
+  File "<ipython-input-84-2f689c2ef075>", line 1, in <module>
+    next(name)
+
+  File "<ipython-input-81-8e8c3afbaa00>", line 1, in <genexpr>
+    name=(n for n in os.listdir() if os.path.isfile(name))
+
+  File "D:\Users\16476\Anaconda3\lib\genericpath.py", line 30, in isfile
+    st = os.stat(path)
+
+TypeError: stat: path should be string, bytes, os.PathLike or integer, not generator
+
+
+
+
+for i in name:
+    print(i)
+    
+
+name=[n for n in os.listdir() if os.path.isfile(name)]
+Traceback (most recent call last):
+
+  File "<ipython-input-86-3714c520d617>", line 1, in <module>
+    name=[n for n in os.listdir() if os.path.isfile(name)]
+
+  File "<ipython-input-86-3714c520d617>", line 1, in <listcomp>
+    name=[n for n in os.listdir() if os.path.isfile(name)]
+
+  File "D:\Users\16476\Anaconda3\lib\genericpath.py", line 30, in isfile
+    st = os.stat(path)
+
+TypeError: stat: path should be string, bytes, os.PathLike or integer, not generator
+
+
+
+
+name=[n for n in os.listdir() if os.path.isfile(n)]
+
+n
+Traceback (most recent call last):
+
+  File "<ipython-input-88-ab0680a89434>", line 1, in <module>
+    n
+
+NameError: name 'n' is not defined
+
+
+
+
+name
+Out[89]: 
+['1.png',
+ '4.jpg',
+ 'ck.txt',
+ 'ck_log.txt',
+ 'io.7z',
+ 'io.py',
+ 'io.zip',
+ 'jalapexflo.txt',
+ 'readme.txt',
+ 'untitled0.py',
+ 'untitled1.py',
+ 'Í¼Æ¬·Ö²ã.py',
+ '½µÎ¬.py',
+ '½µÎ¬2py.py']
+
+name=(n for n in os.listdir() if os.path.isfile(n))
+
+name
+Out[91]: <generator object <genexpr> at 0x00000110A2ECF848>
+
+for i in name:
+    
+    print(i)
+    
+1.png
+4.jpg
+ck.txt
+ck_log.txt
+io.7z
+io.py
+io.zip
+jalapexflo.txt
+readme.txt
+untitled0.py
+untitled1.py
+Í¼Æ¬·Ö²ã.py
+½µÎ¬.py
+½µÎ¬2py.py
+
+import glob 
+
+py=glob.glob('*.py')
+
+py
+Out[95]: ['io.py', 'untitled0.py', 'untitled1.py', 'Í¼Æ¬·Ö²ã.py', '½µÎ¬.py', '½µÎ¬2py.py']
+
+from fnmatch import fnmatch
+
+pyfiles=[p for p in os.path.listdir() if fnmatch(p,'*.py')]
+Traceback (most recent call last):
+
+  File "<ipython-input-97-71dfda50dc9a>", line 1, in <module>
+    pyfiles=[p for p in os.path.listdir() if fnmatch(p,'*.py')]
+
+AttributeError: module 'ntpath' has no attribute 'listdir'
+
+
+
+
+pyfiles=[p for p in os.listdir() if fnmatch(p,'*.py')]
+
+pyfiles
+Out[99]: ['io.py', 'untitled0.py', 'untitled1.py', 'Í¼Æ¬·Ö²ã.py', '½µÎ¬.py', '½µÎ¬2py.py']
+
+import os .path
+
+namel=[(name,os.path.

@@ -1,16 +1,17 @@
 # -*- coding: utf-8 -*-
-from collections import deque
-def search (lines,pattern,history=5):
-    
-    previous_lines = deque(maxlen=history)
-    for line in lines:
-        if pattern in line:
-            yield line, previous_lines
-        previous_lines.append(line)
-if __name__ =='__main__':
-    with open('untitled0.py') as f:
-        for line,prevlines in search (f,'python',5):
-            for pline in prevlines :
-                print(line,end='')
-                print('-'*20)
-        
+"""
+Created on Sun Nov 17 11:16:49 2019
+
+@author: 16476
+"""
+import numpy as np
+def dedupe(items):
+    seen = set()
+    for item in items:
+        if item not in seen:
+            yield item 
+            seen.add(item)
+a=np.random.randint(10,size=10)
+list(dedupe(a))
+s=slice(2,4)
+a[s]
