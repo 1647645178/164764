@@ -2786,3 +2786,958 @@ Out[99]: ['io.py', 'untitled0.py', 'untitled1.py', '图片分层.py', '降维.py', '降
 import os .path
 
 namel=[(name,os.path.
+
+with open('io.py') as f:
+    for i,j in enumerate(f,1):
+        print(i,j)
+        
+f=open('io.py','r')
+f.read()
+f=open('io.py','w')
+f.write('hh')
+f.close()
+f=open('io.py','w')
+f.read()
+f=open('io.py','r+')
+f.write('hh')
+f.close()
+z=open('io.py','r+')
+z.write('hh')
+f.close()
+z=open('io.py','r+')
+z.write('hhf')
+f.close()
+z=open('io.py','r+')
+z.write('hhf')
+z.read()
+z.close()
+z=open('io.py','r+')
+z.write('hhf')
+z.read()
+z.close()
+z=open('io.py','a+')
+z.read()
+z.write('hhf1')
+z.close()
+z=open('io.py','a+')
+print(z.read())
+z.close()
+z=open('io.py','r+')
+print(z.read())
+z.write('hhf12')
+z.close()
+z=open('io.py','r+')
+z.write('hhf12')
+z.read()
+z.write('hhf12333333333')
+z.read()
+z.close()
+z=open('io.py','a+')
+z.write('hhf12333333333999999')
+z.close()
+with open('io.py') as f:
+    a=f.readlines()
+    
+a
+with open('io.py') as f:
+    
+    a=f.readlines()
+    
+a
+a=open('1.txt','w')
+a=open('1.txt','a')
+a=open('1.txt5','a')
+a=open('1.txt5','x')
+a=open('1.txt56','x')
+a.close()
+import json
+def main():
+    mydict = {
+        'name': '骆昊',
+        'age': 38,
+        'qq': 957658,
+        'friends': ['王大锤', '白元芳'],
+        'cars': [
+            {'brand': 'BYD', 'max_speed': 180},
+            {'brand': 'Audi', 'max_speed': 280},
+            {'brand': 'Benz', 'max_speed': 320}
+        ]
+    }
+    try:
+        with open('data.json', 'w') as fs:
+            json.dump(mydict, fs)
+    except IOError as e:
+        print(e)
+    print('保存数据完成!')
+    
+main()
+with open ('data.json','r',encoding='utf-8') as f:
+    print(f.read())
+    
+def main():
+    mydict = {
+        'name': '骆昊',
+        'age': 38,
+        'qq': 957658,
+        'friends': ['王大锤', '白元芳'],
+        'cars': [
+            {'brand': 'BYD', 'max_speed': 180},
+            {'brand': 'Audi', 'max_speed': 280},
+            {'brand': 'Benz', 'max_speed': 320}
+        ]
+    }
+    try:
+        with open('data.json', 'w', encoding='utf-8') as fs:
+            json.dump(mydict, fs)
+    except IOError as e:
+        print(e)
+    print('保存数据完成!')
+    
+with open('data.json', 'r+', encoding='utf-8') as fs:
+    fs.write('start')
+    
+with open('data.json', 'r+', encoding='utf-8') as fs:
+    fs.read()
+    fs.write('start')
+    
+dict{'a':1}
+d={'a':1}
+with open ('j.txt','w') as f:
+    json.dump(d,f)
+    
+with open ('j.txt','w') as f:
+    a=json.load(d,f)
+    
+with open ('j.txt','w') as f:
+    a=json.load(f)
+    
+with open ('j.txt','r') as f:
+    a=json.load(f)
+    
+with open ('j.txt','r+') as f:
+    a=json.load(f)
+    
+with open ('j.txt','r+') as f:
+    a=json.load(f,strict=False)
+    
+with open ('j.txt','w') as f:
+    json.dump(d,f)
+    
+with open ('j.txt','r') as f:
+    a=json.load(f,strict=False)
+    
+a
+with open ('j.txt','r') as f:
+    a=json.load(f)
+    
+a
+type(a)
+json.jumps(a)
+json.dumps(a)
+with open ('j.txt','r') as f:
+    print(f.read(100))
+    
+with open ('j.txt','r') as f:
+    print(f.read())
+    
+with open ('j.txt','r',encoding='utf-8') as f:
+    print(f.read())
+    
+with open ('j.txt','r',encoding='unicode') as f:
+    print(f.read())
+    
+with open ('j.txt','r',encoding='Unicode') as f:
+    print(f.read())
+    
+with open ('j.txt','r') as f:
+    print(f.read())
+    
+with open ('j.txt','r') as f:
+    print(f.read())
+    
+with open ('j.txt','r',encoding='Unicode') as f:
+    print(f.read())
+    
+with open ('j.txt','r',encoding='utf-8') as f:
+    print(f.read())
+    
+with open ('j.txt','r') as f:
+    print(f.read())
+    
+with open ('j.txt','r',encoding='utf-8') as f:
+    a=json.load(f)
+    
+with open ('j.txt','r',encoding='utf-8-sig') as f:
+    a=json.load(f)
+    
+a['id']
+a
+a['data']
+a['data':'list']
+a['data']['list']
+type(a['data']['list'])
+dict(a['data']['list'])
+a['data']['list'][0]
+a['data']['list'][0]['id']
+with open ('k.txt','r',encoding='utf-8-sig') as f:
+    a=json.load(f)
+    
+with open ('k.txt','r',encoding='utf-8-sig') as f:
+    
+    a=json.load(f)
+    
+a['data']
+with open ('k.txt','r',encoding='utf-8-sig') as f:
+    
+    a=json.load(f)
+    
+a['data']
+a['data']['remark']
+a['data']['remarks']
+l={}
+l.update('a':1)
+l.update({'a':1})
+l
+a=1
+b=2
+{a:b}
+c={a:b}
+a,b=c
+c.keys()
+a=c.keys()
+a
+type(a)
+print(a)
+print(srt(a))
+print(str(a))
+print(l.popitem())
+d.values
+d.values()
+d.keys()
+f=d.keys()
+list(f)
+s='{'潍坊银行2020年校园招聘启事': 'http://wxdonglin.jiuyeb.cn/xiaozhao/details.html?id=973a831b-337f-d760-8d4e-a19ab1031a5d'}'
+s=r'{'潍坊银行2020年校园招聘启事': 'http://wxdonglin.jiuyeb.cn/xiaozhao/details.html?id=973a831b-337f-d760-8d4e-a19ab1031a5d'}'
+s=r'\{\'潍坊银行2020年校园招聘启事': 'http://wxdonglin.jiuyeb.cn/xiaozhao/details.html?id=973a831b-337f-d760-8d4e-a19ab1031a5d\'\}'
+s=r'{\'潍坊银行2020年校园招聘启事\': \'http://w5d\'}'
+print(s)
+s='{\'潍坊银行2020年校园招聘启事\': \'http://w5d\'}'
+import re 
+c=re.compile(r'\'(.*)\'')
+c.findall(s)
+s
+c=re.compile(r'\'(.*?)\'')
+c.findall(s)
+jc.findall(s)
+a
+j=c.findall(s)
+j
+for i in j:
+    print(j)
+    
+':'.join(j)
+import tensorflow as tf
+
+tf.__version__
+
+## ---(Thu Dec  5 08:05:09 2019)---
+import tensorflow as tf
+
+tf.__version__
+
+## ---(Thu Dec  5 09:40:41 2019)---
+import tensorflow as tf
+tf.__version__
+sess = tf.Session() 
+a = tf.constant(1) 
+b = tf.constant(2) 
+print(sess.run(a+b))
+
+
+
+## ---(Thu Dec  5 12:53:33 2019)---
+with open ('罗密欧与朱丽叶(英文版)莎士比亚.txt')as f: 
+     l=re.split(r'[,\s.]\s*',f.read())
+     
+import re
+with open ('罗密欧与朱丽叶(英文版)莎士比亚.txt')as f: 
+     l=re.split(r'[,\s.]\s*',f.read())
+     
+l
+from collections import Counter
+top_five=Counter(l).most_common(5)
+print(top_five)
+for w in l:
+    wc[w]+=1
+    
+import jieba
+with open ('《基督山伯爵》全集.txt',encoding='utf-8')as f: 
+     l=re.split(r'[,\s.]\s*',f.read())
+     
+with open ('《基督山伯爵》全集.txt',encoding='gbk')as f: 
+     l=f.read()
+     
+with open ('《基督山伯爵》全集.txt',encoding='utf-8')as f: 
+     j=f.read()
+     
+with open ('《基督山伯爵》全集.txt',encoding='gbk')as f: 
+     j=f.read()
+     
+l=jieba.lcut(j)
+top_five=Counter(l).most_common(5)
+print(top_five)
+with open ('《基督山伯爵》全集.txt',encoding='utf-8')as f: 
+     j=f.read()
+     
+l=jieba.lcut(j)
+top_five=Counter(l).most_common(5)
+print(top_five)
+l[0:100]
+top_five=Counter(l).most_common(30)
+print(top_five)
+top_five=Counter(l).most_common(99)
+print(top_five)
+top_five=Counter(l).most_common(200)
+print(top_five)
+import re 
+ls='    aafaf,    222    '
+re.split(r'[\s,]\s*)
+re.split(r'[\s,]\s*')
+re.split(r'[\s,]\s*',ls)
+re.split(r'\s*[\s,]\s*',ls)
+re.split(r'[\s,]\s*',ls)
+ls
+ls='aafaf,    222'
+re.split(r'[\s,]\s*',ls)
+ls='    aafaf,    222    '
+l=re.split(r'[\s,]\s*',ls)
+l.insert('')
+l.remove('')
+l
+l.remove(' ')
+l.remove('')
+l
+'222' not in l
+s='abcde'
+re.match(r'de$',s)
+re.match(r'de$',s).group(0)
+a=re.match(r'de$',s)
+a
+a.group()
+if a
+if re.match(r'de$',s):
+    print('d')
+    
+if re.match(r'de$',s):
+    print('d')
+    
+if re.match(r'^a',s):
+    print('d')
+    
+if re.match(r'^abc',s):
+    print('d')
+    
+if re.match(r'$cd',s):
+    print('d')
+    
+if re.match(r'$de',s):
+    print('d')
+    
+if re.match(r'de$',s):
+    print('d')
+    
+if re.match(r'e$',s):
+    print('d')
+    
+s.endswith('de')
+if re.match(r'de$',s):
+    print(re.match(r'de$',s).group())
+    
+if re.match(r'e$',s):
+    print(re.match(r'de$',s).group())
+qq='56454'
+m2 = re.match(r'^[1-9]\d{4,11}$', qq)
+m2.group()
+if re.match(r'^ae$',s):
+    print(re.match(r'de$',s).group())
+    
+if re.match(r'e$',s):
+    print(re.match(r'de$',s).group())
+    
+s='abd bcd'
+if re.match(r'e$',s):
+    print(re.match(r'de$',s).group())
+    
+s='abc bcd bbb'
+if re.match(r'^b',s):
+    print(re.match(r'de$',s).group())
+    
+if re.match(r'^a',s):
+    print(re.match(r'de$',s).group())
+    
+if re.findall(r'^a',s):
+    print(re.match(r'de$',s).group())
+    
+if re.findall(r'5$','12345'):
+    print(re.match(r'de$',s).group())
+    
+if re.findall(r'de$','abcde'):
+    pritn('$')
+    
+import re
+
+
+def main():
+    username = input('请输入用户名: ')
+    qq = input('请输入QQ号: ')
+    # match函数的第一个参数是正则表达式字符串或正则表达式对象
+    # 第二个参数是要跟正则表达式做匹配的字符串对象
+    m1 = re.match(r'^[0-9a-zA-Z_]{6,20}$', username)
+    if not m1:
+        print('请输入有效的用户名.')
+    m2 = re.match(r'^[1-9]\d{4,11}$', qq)
+    if not m2:
+        print('请输入有效的QQ号.')
+    if m1 and m2:
+        print('你输入的信息是有效的!')
+
+
+if __name__ == '__main__':
+    main()
+    
+def main():
+    poem = '窗前明月光，疑是地上霜。举头望明月，低头思故乡。'
+    sentence_list = re.split(r'[，。, .]', poem)
+    print(sentence_list)  # ['窗前明月光', '疑是地上霜', '举头望明月', '低头思故乡']
+
+
+if __name__ == '__main__':
+    main()
+    
+from tempfile import TemporaryFile
+with TemporaryFile('w+t') as f
+with TemporaryFile('w+t') as f:
+    f.write('Hello')
+    f.seek(0)
+    data=f.read()
+    
+with TemporaryFile('w+t') as f:
+    f.write('Hello')
+    #f.seek(0)
+    data2=f.read()
+    
+from tempfile import NamedTemporaryFile
+with NamedTemporaryFile('w+t')as f: ('filename is:',f.name)
+with NamedTemporaryFile('w+t')as f:\ ('filename is:',f.name)
+with NamedTemporaryFile('w+t')as f:
+    print('filename is:',f.name)
+    
+from tempfile import TemporaryDirectory
+with TemporaryDirectory('w+t')as f:
+    print('filename is:',f.name)
+    
+with TemporaryDirectory('w+t')as f:
+    print('filename is:',f.dirname)
+    
+with TemporaryDirectory('w+t')as f:
+    print('filename is:',f)
+    
+import tempfile
+tempfile.gettempdir()
+tempfile.mkdtemp()
+tempfile.mkstemp()
+f=NamedTemporaryFile(prefix='mytemp',suffix=''txt',dir='/tem')
+f=NamedTemporaryFile(prefix='mytemp',suffix='.txt',dir='/tem')
+ import pickle
+data=dict(i:i**2 for i in range(4))
+data={i:i**2 for i in range(4)}
+f=open('x.txt','wb')
+pickle.dump(data,f)
+s=pickle.dumps(data)
+f.close()
+f=open('x.txt','rb')
+data2=pickle.load(f)
+data2
+s
+data=pickle.loads(s)
+data
+top_five=Counter(l).most_common(200)
+print(top_five)
+[('，', 47809), ('的', 33271), ('\u3000', 26197), ('。', 22237), ('-', 16573), ('“', 15142), ('\n', 15108), ('”', 15005), ('=', 14076), (' ', 13458), ('他', 13267), ('了', 13068), ('我', 12925), ('是', 7049), ('在', 6566), ('你', 5759), ('？', 4478), ('说', 4477), ('您', 3563), ('—', 3516), ('那', 3415), ('一个', 3402), ('！', 3388), ('就', 3001), ('她', 2991), ('人', 2680), ('和', 2573), ('着', 2333), ('不', 2313), ('把', 2269), ('去', 2110), ('但', 2110), ('到', 2092), ('来', 2052), ('里', 2042), ('这', 1989), ('有', 1957), ('我们', 1931), ('也', 1918), ('都', 1890), ('他们', 1771), ('上', 1722), ('伯爵', 1715), ('地', 1614), ('吗', 1533), ('吧', 1471), ('先生', 1468), ('什么', 1431), ('很', 1417), ('可以', 1370), ('没有', 1350), ('对', 1324), ('那个', 1321), ('知道', 1315), ('时候', 1299), ('要', 1297), ('而', 1285), ('基督山', 1230), ('又', 1213), ('说道', 1189), ('因为', 1140), ('这个', 1132), ('维尔', 1072), ('自己', 1071), ('这样', 1056), ('会', 1047), ('给', 1017), ('还', 992), ('从', 987), ('得', 982), ('现在', 963), ('呢', 959), ('过', 947), ('想', 933), ('福', 912), ('向', 907), ('已', 904), ('用', 883), ('已经', 880), ('它', 874), ('’', 871), ('‘', 857), ('阿尔贝', 818), ('好', 807), ('被', 785), ('·', 774), ('那么', 744), ('格拉', 730), ('却', 722), ('走', 718), ('使', 716), ('尔', 709), ('莫雷尔', 706), ('蒂娜', 696), ('：', 690), ('所', 689), ('当', 686), ('这种', 680), ('就是', 676), ('不是', 675), ('并', 673), ('象', 671), ('腾', 668), ('阁下', 653), ('一种', 651), ('一样', 650), ('瓦朗', 648), ('；', 646), ('唐太斯', 640), ('能', 608), ('所以', 605), ('让', 603), ('事', 600), ('看到', 594), ('夫人', 591), ('回答', 588), ('做', 585), ('看', 570), ('卡', 568), ('弗兰兹', 560), ('一', 558), ('再', 556), ('告诉', 543), ('只', 537), ('以后', 536), ('假如', 534), ('那种', 534), ('房间', 532), ('噢', 532), ('父亲', 531), ('然后', 524), ('请', 511), ('那些', 505), ('朋友', 502), ('一切', 499), ('一下', 498), ('啊', 497), ('起来', 495), ('那儿', 476), ('一定', 474), ('一点', 473), ('而且', 473), ('希望', 470), ('、', 464), ('的话', 457), ('呀', 456), ('事情', 455), ('离开', 445), ('或', 445), ('听', 438), ('谁', 435), ('为', 435), ('曾', 428), ('死', 422), ('于是', 420), ('非常', 418), ('眼睛', 413), ('觉得', 411), ('答道', 410), ('带', 409), ('德鲁', 408), ('地方', 404), ('两个', 404), ('你们', 400), ('这些', 400), ('这儿', 395), ('那样', 391), ('只是', 391), ('塞夫', 387), ('啦', 385), ('东西', 383), ('中', 382), ('声音', 381), ('最', 378), ('问', 372), ('上帝', 371), ('听到', 371), ('不会', 370), ('马尔', 369), ('怎么', 368), ('叫', 367), ('以前', 366), ('还是', 364), ('象是', 362), ('便', 357), ('一次', 352), ('更', 351), ('可', 350), ('真的', 346), ('不能', 342), ('相信', 341), ('一位', 340), ('出来', 340), ('诺瓦', 340), ('马车', 338), ('如果', 337), ('等', 332), ('看见', 328), ('亲爱', 325), ('巴黎', 323)]
+
+import re 
+
+ls='    aafaf,    222    '
+
+re.split(r'[\s,]\s*)
+  File "<ipython-input-26-dc6900521d80>", line 1
+    re.split(r'[\s,]\s*)
+                        ^
+SyntaxError: EOL while scanning string literal
+
+
+
+
+re.split(r'[\s,]\s*')
+Traceback (most recent call last):
+
+  File "<ipython-input-27-dfd870dd4b08>", line 1, in <module>
+    re.split(r'[\s,]\s*')
+
+TypeError: split() missing 1 required positional argument: 'string'
+
+
+
+
+re.split(r'[\s,]\s*',ls)
+Out[28]: ['', 'aafaf', '222', '']
+
+re.split(r'\s*[\s,]\s*',ls)
+Out[29]: ['', 'aafaf', '222', '']
+
+re.split(r'[\s,]\s*',ls)
+Out[30]: ['', 'aafaf', '222', '']
+
+ls
+Out[31]: '    aafaf,    222    '
+
+ls='aafaf,    222'
+
+re.split(r'[\s,]\s*',ls)
+Out[33]: ['aafaf', '222']
+
+ls='    aafaf,    222    '
+
+l=re.split(r'[\s,]\s*',ls)
+
+l.insert('')
+Traceback (most recent call last):
+
+  File "<ipython-input-36-574cdea338d2>", line 1, in <module>
+    l.insert('')
+
+TypeError: insert() takes exactly 2 arguments (1 given)
+
+
+
+
+l.remove('')
+
+l
+Out[38]: ['aafaf', '222', '']
+
+l.remove(' ')
+Traceback (most recent call last):
+
+  File "<ipython-input-39-711fff61d7f8>", line 1, in <module>
+    l.remove(' ')
+
+ValueError: list.remove(x): x not in list
+
+
+
+
+l.remove('')
+
+l
+Out[41]: ['aafaf', '222']
+
+'222' not in l
+Out[42]: False
+
+s='abcde'
+
+re.match(r'de$',s)
+
+re.match(r'de$',s).group(0)
+Traceback (most recent call last):
+
+  File "<ipython-input-45-21fc005a303f>", line 1, in <module>
+    re.match(r'de$',s).group(0)
+
+AttributeError: 'NoneType' object has no attribute 'group'
+
+
+
+
+a=re.match(r'de$',s)
+
+a
+
+a.group()
+Traceback (most recent call last):
+
+  File "<ipython-input-48-567322dbc5b9>", line 1, in <module>
+    a.group()
+
+AttributeError: 'NoneType' object has no attribute 'group'
+
+
+
+
+if a
+  File "<ipython-input-49-95806c26c887>", line 1
+    if a
+        ^
+SyntaxError: invalid syntax
+
+
+
+
+if re.match(r'de$',s):
+    print('d')
+    
+
+if re.match(r'de$',s):
+    print('d')
+    
+
+if re.match(r'^a',s):
+    print('d')
+    
+d
+
+if re.match(r'^abc',s):
+    print('d')
+    
+
+d
+
+if re.match(r'$cd',s):
+    print('d')
+    
+
+if re.match(r'$de',s):
+    print('d')
+    
+
+if re.match(r'de$',s):
+    print('d')
+    
+
+if re.match(r'e$',s):
+    print('d')
+    
+
+s.endswith('de')
+Out[58]: True
+
+if re.match(r'de$',s):
+    print(re.match(r'de$',s).group())
+    
+
+if re.match(r'e$',s):
+    print(re.match(r'de$',s).group())
+
+
+qq='56454'
+
+m2 = re.match(r'^[1-9]\d{4,11}$', qq)
+
+m2.group()
+
+Out[63]: '56454'
+
+if re.match(r'^ae$',s):
+    print(re.match(r'de$',s).group())
+    
+
+if re.match(r'e$',s):
+    print(re.match(r'de$',s).group())
+    
+
+s='abd bcd'
+
+if re.match(r'e$',s):
+    print(re.match(r'de$',s).group())
+    
+
+s='abc bcd bbb'
+
+if re.match(r'^b',s):
+    print(re.match(r'de$',s).group())
+    
+
+if re.match(r'^a',s):
+    print(re.match(r'de$',s).group())
+    
+Traceback (most recent call last):
+
+  File "<ipython-input-70-db47c4d34a02>", line 2, in <module>
+    print(re.match(r'de$',s).group())
+
+AttributeError: 'NoneType' object has no attribute 'group'
+
+
+
+
+if re.findall(r'^a',s):
+    print(re.match(r'de$',s).group())
+    
+Traceback (most recent call last):
+
+  File "<ipython-input-71-f87cf8bc5b6d>", line 2, in <module>
+    print(re.match(r'de$',s).group())
+
+AttributeError: 'NoneType' object has no attribute 'group'
+
+
+
+
+if re.findall(r'5$','12345'):
+    print(re.match(r'de$',s).group())
+    
+Traceback (most recent call last):
+
+  File "<ipython-input-72-e5b47c639aa4>", line 2, in <module>
+    print(re.match(r'de$',s).group())
+
+AttributeError: 'NoneType' object has no attribute 'group'
+
+
+
+
+if re.findall(r'de$','abcde'):
+    pritn('$')
+    
+Traceback (most recent call last):
+
+  File "<ipython-input-73-6b0eb61a9fbe>", line 2, in <module>
+    pritn('$')
+
+NameError: name 'pritn' is not defined
+
+
+
+
+import re
+
+
+def main():
+    username = input('请输入用户名: ')
+    qq = input('请输入QQ号: ')
+    # match函数的第一个参数是正则表达式字符串或正则表达式对象
+    # 第二个参数是要跟正则表达式做匹配的字符串对象
+    m1 = re.match(r'^[0-9a-zA-Z_]{6,20}$', username)
+    if not m1:
+        print('请输入有效的用户名.')
+    m2 = re.match(r'^[1-9]\d{4,11}$', qq)
+    if not m2:
+        print('请输入有效的QQ号.')
+    if m1 and m2:
+        print('你输入的信息是有效的!')
+
+
+if __name__ == '__main__':
+    main()
+    
+
+请输入用户名: 15615615165165165516
+
+请输入QQ号: 
+请输入有效的QQ号.
+
+def main():
+    poem = '窗前明月光，疑是地上霜。举头望明月，低头思故乡。'
+    sentence_list = re.split(r'[，。, .]', poem)
+    print(sentence_list)  # ['窗前明月光', '疑是地上霜', '举头望明月', '低头思故乡']
+
+
+if __name__ == '__main__':
+    main()
+    
+['窗前明月光', '疑是地上霜', '举头望明月', '低头思故乡', '']
+
+from tempfile import TemporaryFile
+
+with TemporaryFile('w+t') as f
+  File "<ipython-input-77-32507dcbd29d>", line 1
+    with TemporaryFile('w+t') as f
+                                  ^
+SyntaxError: invalid syntax
+
+
+
+
+with TemporaryFile('w+t') as f:
+    f.write('Hello')
+    f.seek(0)
+    data=f.read()
+    
+
+
+with TemporaryFile('w+t') as f:
+    f.write('Hello')
+    #f.seek(0)
+    data2=f.read()
+    
+
+from tempfile import NamedTemporaryFile
+
+with NamedTemporaryFile('w+t')as f: ('filename is:',f.name)
+
+with NamedTemporaryFile('w+t')as f:\ ('filename is:',f.name)
+  File "<ipython-input-82-63c36550f835>", line 1
+    with NamedTemporaryFile('w+t')as f:\ ('filename is:',f.name)
+                                                                ^
+SyntaxError: unexpected character after line continuation character
+
+
+
+
+with NamedTemporaryFile('w+t')as f:
+    print('filename is:',f.name)
+    
+filename is: C:\Users\16476\AppData\Local\Temp\tmpwv6yhj6v
+
+from tempfile import TemporaryDirectory
+
+with TemporaryDirectory('w+t')as f:
+    print('filename is:',f.name)
+    
+Traceback (most recent call last):
+
+  File "<ipython-input-85-1596d96fd8a0>", line 2, in <module>
+    print('filename is:',f.name)
+
+AttributeError: 'str' object has no attribute 'name'
+
+
+
+
+with TemporaryDirectory('w+t')as f:
+    print('filename is:',f.dirname)
+    
+Traceback (most recent call last):
+
+  File "<ipython-input-86-98cd03181cbf>", line 2, in <module>
+    print('filename is:',f.dirname)
+
+AttributeError: 'str' object has no attribute 'dirname'
+
+
+
+
+with TemporaryDirectory('w+t')as f:
+    print('filename is:',f)
+    
+filename is: C:\Users\16476\AppData\Local\Temp\tmpzpzhbo2yw+t
+
+import tempfile
+
+tempfile.gettempdir()
+Out[89]: 'C:\\Users\\16476\\AppData\\Local\\Temp'
+
+tempfile.mkdtemp()
+Out[90]: 'C:\\Users\\16476\\AppData\\Local\\Temp\\tmpwdilhsls'
+
+tempfile.mkstemp()
+Out[91]: (5, 'C:\\Users\\16476\\AppData\\Local\\Temp\\tmpsvhmm327')
+
+f=NamedTemporaryFile(prefix='mytemp',suffix=''txt',dir='/tem')
+  File "<ipython-input-92-387d4792d29a>", line 1
+    f=NamedTemporaryFile(prefix='mytemp',suffix=''txt',dir='/tem')
+                                                    ^
+SyntaxError: invalid syntax
+
+
+
+
+f=NamedTemporaryFile(prefix='mytemp',suffix='.txt',dir='/tem')
+Traceback (most recent call last):
+
+  File "<ipython-input-93-9d078fb8fbf0>", line 1, in <module>
+    f=NamedTemporaryFile(prefix='mytemp',suffix='.txt',dir='/tem')
+
+  File "D:\Users\16476\Anaconda3\lib\tempfile.py", line 547, in NamedTemporaryFile
+    (fd, name) = _mkstemp_inner(dir, prefix, suffix, flags, output_type)
+
+  File "D:\Users\16476\Anaconda3\lib\tempfile.py", line 258, in _mkstemp_inner
+    fd = _os.open(file, flags, 0o600)
+
+FileNotFoundError: [Errno 2] No such file or directory: '/tem\\mytempirujzh7v.txt'
+
+
+
+
+ import pickle
+
+data=dict(i:i**2 for i in range(4))
+  File "<ipython-input-95-811047708ea3>", line 1
+    data=dict(i:i**2 for i in range(4))
+               ^
+SyntaxError: invalid syntax
+
+
+
+
+data={i:i**2 for i in range(4)}
+
+f=open('x.txt','wb')
+
+pickle.dump(data,f)
+
+s=pickle.dumps(data)
+
+f.close()
+
+f=open('x.txt','rb')
+
+data2=pickle.load(f)
+
+data2
+Out[103]: {0: 0, 1: 1, 2: 4, 3: 9}
+
+s
+Out[104]: b'\x80\x03}q\x00(K\x00K\x00K\x01K\x01K\x02K\x04K\x03K\tu.'
+
+
+
+data=pickle.loads(s)
+
+data
+Out[106]: {0: 0, 1: 1, 2: 4, 3: 9}
+
+import pickle
+
+f=open('somedata','wb')
+
+pickle.dump([1,2,3,4],f)
+
+pickle.dump('hello',f)
+
+pickle.dump({'apple','Pear','Hh'},f)
+
+f.close()
+
+f.open('somedata','rb')
+Traceback (most recent call last):
+
+  File "<ipython-input-113-43a27d019ca9>", line 1, in <module>
+    f.open('somedata','rb')
+
+AttributeError: '_io.BufferedWriter' object has no attribute 'open'
+
+
+
+
+f=open('somedata','rb')
+
+pickle.load(f)
+Out[115]: [1, 2, 3, 4]
+
+pickle.load(f)
+Out[116]: 'hello'
+
+pickle.load(f)
+Out[117]: {'Hh', 'Pear', 'apple'}
+
+pickle.load(f)
+Traceback (most recent call last):
+
+  File "<ipython-input-118-5f9e95a79b13>", line 1, in <module>
+    pickle.load(f)
+
+EOFError: Ran out of input
+
+s
