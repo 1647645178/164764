@@ -3741,3 +3741,248 @@ Traceback (most recent call last):
 EOFError: Ran out of input
 
 s
+Python 3.5.6 |Anaconda, Inc.| (default, Aug 26 2018, 16:05:27) [MSC v.1900 64 bit (AMD64)]
+Type "copyright", "credits" or "license" for more information.
+
+IPython 6.5.0 -- An enhanced Interactive Python.
+
+import numpy as np
+
+a=np.random.RandomState().rand(3,2)
+
+a
+Out[3]: 
+array([[0.49897133, 0.07697285],
+       [0.7191427 , 0.6221541 ],
+       [0.33238483, 0.65880721]])
+
+a[1]
+Out[4]: array([0.7191427, 0.6221541])
+
+a[1:3]
+Out[5]: 
+array([[0.7191427 , 0.6221541 ],
+       [0.33238483, 0.65880721]])
+
+a[1:2:3]
+Out[6]: array([[0.7191427, 0.6221541]])
+
+a[1:2:3][1]
+Traceback (most recent call last):
+
+  File "<ipython-input-7-42dcadb3e78b>", line 1, in <module>
+    a[1:2:3][1]
+
+IndexError: index 1 is out of bounds for axis 0 with size 1
+
+
+
+
+a[1,1]
+Out[8]: 0.6221541030365795
+
+a[1:3,1]
+Out[9]: array([0.6221541 , 0.65880721])
+
+b=a[1:3,1]
+
+b.shape()
+Traceback (most recent call last):
+
+  File "<ipython-input-11-f74cf9dd84e0>", line 1, in <module>
+    b.shape()
+
+TypeError: 'tuple' object is not callable
+
+
+
+
+b.shape
+Out[12]: (2,)
+
+np.matmul(b,a)
+Traceback (most recent call last):
+
+  File "<ipython-input-13-1679ee62b0c5>", line 1, in <module>
+    np.matmul(b,a)
+
+ValueError: shapes (2,) and (3,2) not aligned: 2 (dim 0) != 3 (dim 0)
+
+
+
+
+np.matmul(a,b)
+Out[14]: array([0.36114733, 0.85729719, 0.64082152])
+
+np.matmul(a,b).T
+Out[15]: array([0.36114733, 0.85729719, 0.64082152])
+
+b
+Out[16]: array([0.6221541 , 0.65880721])
+
+b.T
+Out[17]: array([0.6221541 , 0.65880721])
+
+a.T
+Out[18]: 
+array([[0.49897133, 0.7191427 , 0.33238483],
+       [0.07697285, 0.6221541 , 0.65880721]])
+
+c=np.array([1,2])
+
+c.T
+Out[20]: array([1, 2])
+
+c=np.array([[1,2]])
+
+c.T
+Out[22]: 
+array([[1],
+       [2]])
+
+np.matmul(a,c).T
+Traceback (most recent call last):
+
+  File "<ipython-input-23-b64e43bce6d0>", line 1, in <module>
+    np.matmul(a,c).T
+
+ValueError: shapes (3,2) and (1,2) not aligned: 2 (dim 1) != 1 (dim 0)
+
+
+
+
+np.matmul(c,a).T
+Traceback (most recent call last):
+
+  File "<ipython-input-24-dd188846769f>", line 1, in <module>
+    np.matmul(c,a).T
+
+ValueError: shapes (1,2) and (3,2) not aligned: 2 (dim 1) != 3 (dim 0)
+
+
+
+
+np.matmul(a,c.T).T
+Out[25]: array([[0.65291703, 1.9634509 , 1.64999924]])
+
+np.matmul(a,c.T)
+Out[26]: 
+array([[0.65291703],
+       [1.9634509 ],
+       [1.64999924]])
+
+np.matmul(a.T,c)
+Traceback (most recent call last):
+
+  File "<ipython-input-27-ee80f5f4212e>", line 1, in <module>
+    np.matmul(a.T,c)
+
+ValueError: shapes (2,3) and (1,2) not aligned: 3 (dim 1) != 1 (dim 0)
+
+
+
+
+b
+Out[28]: array([0.6221541 , 0.65880721])
+
+np.matmul(b,c)
+Traceback (most recent call last):
+
+  File "<ipython-input-29-d17efbbf6ff2>", line 1, in <module>
+    np.matmul(b,c)
+
+ValueError: shapes (2,) and (1,2) not aligned: 2 (dim 0) != 1 (dim 0)
+
+
+
+
+np.matmul(c,b)
+Out[30]: array([1.93976852])
+
+b
+Out[31]: array([0.6221541 , 0.65880721])
+
+b.shape()
+Traceback (most recent call last):
+
+  File "<ipython-input-32-f74cf9dd84e0>", line 1, in <module>
+    b.shape()
+
+TypeError: 'tuple' object is not callable
+
+
+
+
+b.shape
+Out[33]: (2,)
+
+b.shape(2,1)
+Traceback (most recent call last):
+
+  File "<ipython-input-34-67b0810f0cef>", line 1, in <module>
+    b.shape(2,1)
+
+TypeError: 'tuple' object is not callable
+
+
+
+
+b.reshape(2,1)
+Out[35]: 
+array([[0.6221541 ],
+       [0.65880721]])
+
+b.reshape(1,2)
+Out[36]: array([[0.6221541 , 0.65880721]])
+
+c
+Out[37]: array([[1, 2]])
+
+import sqlite3
+
+db=sqlite3.connect('database.db')
+
+c=db.cursor()
+
+c.execute('create table portfolio (symbol text, shares integer, price real)')
+Out[41]: <sqlite3.Cursor at 0x21757a196c0>
+
+db.commit()
+
+stocks = [('goog',100,490.1),
+('appl',1,2)]
+
+c.executemany('insert into portfolio values (?,?,?)',stocks)
+Out[44]: <sqlite3.Cursor at 0x21757a196c0>
+
+bd.commit()
+Traceback (most recent call last):
+
+  File "<ipython-input-45-76f36e595469>", line 1, in <module>
+    bd.commit()
+
+NameError: name 'bd' is not defined
+
+
+
+
+db.commit()
+
+for row in db.execute('select * from portfolio'):
+    pritn(row)
+    
+Traceback (most recent call last):
+
+  File "<ipython-input-47-fd8bcf618614>", line 2, in <module>
+    pritn(row)
+
+NameError: name 'pritn' is not defined
+
+
+
+
+for row in db.execute('select * from portfolio'):
+    print(row)
+    
+('goog', 100, 490.1)
+('appl', 1, 2.0)
